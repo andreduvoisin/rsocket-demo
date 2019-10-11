@@ -13,7 +13,7 @@ class DemoController {
 
     @MessageMapping("user.{id}")
     fun user(@DestinationVariable id: String): Mono<String> {
-        logger.debug("user.{id}, id={}", id)
-        return Mono.just(id)
+        logger.info("user.{id}, id={}", id)
+        return Mono.just("rsocket user: $id")
     }
 }
